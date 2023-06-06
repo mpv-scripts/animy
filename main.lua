@@ -29,6 +29,10 @@ local function fetch(url,opts)
     c:perform()
     -- print(i(buf))
     return table.concat(buf)
+  else
+    msg.error"Sorry, I need Lua-cURL (https://github.com/Lua-cURL/Lua-cURLv3) for work."
+    msg.error"Please, install it using system package manager or any other method"
+    msg.error"The goal is that Lua interpreter that mpv was built with should be able to find it"
   end
 end
 
